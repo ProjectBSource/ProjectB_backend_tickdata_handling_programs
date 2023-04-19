@@ -4,8 +4,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Calendar;
+import java.util.Date;
 
 /*
  * java HKEX_FUTURE_TickData_Formatting_version_20220330_to_now [day file path] [night file path] [output file path] [F/O] [HSI/MHI]
@@ -62,7 +62,6 @@ public class HKEX_FUTURE_TickData_Formatting_version_20190916_to_20200327 {
                 if(line_tr.substring(0, 6).trim().equals(whatClassCode)){
                     if(line_tr.substring(6, 7).equals(futureORoption)){
                         if(begin_yyyyMMdd == null){
-                            System.out.println(line_tr);
                             begin_yyyyMMdd = new SimpleDateFormat("yyyyMMdd").parse(line_tr.substring(33, 41));
                         }
                         Date curr_yyyyMMdd = new SimpleDateFormat("yyyyMMdd").parse(line_tr.substring(33, 41));
@@ -92,7 +91,6 @@ public class HKEX_FUTURE_TickData_Formatting_version_20190916_to_20200327 {
                 if(line_tr.substring(0, 6).trim().equals(whatClassCode)){
                     if(line_tr.substring(6, 7).equals(futureORoption)){
                         if(end_yyyyMmddkk == null){
-                            System.out.println(line_tr_aht);
                             end_yyyyMmddkk = new SimpleDateFormat("yyyyMMddkk").parse(line_tr_aht.substring(33, 43));
                             Calendar calendar = Calendar.getInstance();
                             calendar.setTime(end_yyyyMmddkk);
