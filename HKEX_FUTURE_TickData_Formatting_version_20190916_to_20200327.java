@@ -11,7 +11,7 @@ import java.util.Calendar;
  * java HKEX_FUTURE_TickData_Formatting_version_20220330_to_now [day file path] [night file path] [output file path] [F/O] [HSI/MHI]
  */
 
-public class HKEX_FUTURE_TickData_Formatting_version_20220330_to_now {
+public class HKEX_FUTURE_TickData_Formatting_version_20190916_to_20200327 {
 
     static File tickdata_tr = null;
     static FileReader fr_tr = null;
