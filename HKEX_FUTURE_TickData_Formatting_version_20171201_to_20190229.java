@@ -10,7 +10,7 @@ import java.util.Date;
  * java HKEX_FUTURE_TickData_Formatting_version_20220330_to_now [day file path] [night file path] [output file path] [F/O] [HSI/MHI]
  */
 
-public class HKEX_FUTURE_TickData_Formatting_version_20131014_to_20190329 {
+public class HKEX_FUTURE_TickData_Formatting_version_20171201_to_20190229 {
 
     static File tickdata_tr = null;
     static FileReader fr_tr = null;
