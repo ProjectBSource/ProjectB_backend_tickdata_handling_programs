@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /*
@@ -61,9 +62,9 @@ public class HKEX_FUTURE_TickData_Formatting_version_20171201_to_20190229 {
                 if(line_tr.substring(0, 6).trim().equals(whatClassCode)){
                     if(line_tr.substring(6, 7).equals(futureORoption)){
                         if(begin_yyyyMMdd == null){
-                            begin_yyyyMMdd = new SimpleDateFormat("yyyyMMdd").parse(line_tr.substring(29, 37));
+                            begin_yyyyMMdd = new SimpleDateFormat("yyyyMMdd").parse(line_tr.substring(29, 39));
                         }
-                        Date curr_yyyyMMdd = new SimpleDateFormat("yyyyMMdd").parse(line_tr.substring(29, 37));
+                        Date curr_yyyyMMdd = new SimpleDateFormat("yyyyMMdd").parse(line_tr.substring(29, 39));
                         if(curr_yyyyMMdd.equals(begin_yyyyMMdd)==false){
                             last_line_tr_before_switch = line_tr;
                             writeFile(formated_content);
@@ -85,15 +86,19 @@ public class HKEX_FUTURE_TickData_Formatting_version_20171201_to_20190229 {
                 formated_content.append("\n");
                 last_line_tr_aht_before_switch = null;
             }
-            Date begin_yyyyMMdd = null;
+            Date end_yyyyMmddkk = null;
             while((line_tr_aht = br_tr_aht.readLine())!=null){
                 if(line_tr.substring(0, 6).trim().equals(whatClassCode)){
                     if(line_tr.substring(6, 7).equals(futureORoption)){
-                        if(begin_yyyyMMdd == null){
-                            begin_yyyyMMdd = new SimpleDateFormat("yyyyMMdd").parse(line_tr_aht.substring(29, 37));
+                        if(end_yyyyMmddkk == null){
+                            end_yyyyMmddkk = new SimpleDateFormat("yyyyMMddkk").parse(line_tr_aht.substring(29, 39));
+                            Calendar calendar = Calendar.getInstance();
+                            calendar.setTime(end_yyyyMmddkk);
+                            calendar.add(Calendar.HOUR_OF_DAY, 12);
+                            end_yyyyMmddkk = calendar.getTime();
                         }
-                        Date curr_yyyyMMddkk = new SimpleDateFormat("yyyyMMdd").parse(line_tr_aht.substring(29, 37));
-                        if(curr_yyyyMMddkk.equals(begin_yyyyMMdd)==false){
+                        Date curr_yyyyMMddkk = new SimpleDateFormat("yyyyMMddkk").parse(line_tr_aht.substring(29, 39));
+                        if(curr_yyyyMMddkk.after(end_yyyyMmddkk)){
                             last_line_tr_aht_before_switch = line_tr_aht;
                             writeFile(formated_content);
                             readFile(1);
@@ -118,3 +123,4 @@ public class HKEX_FUTURE_TickData_Formatting_version_20171201_to_20190229 {
         fw.close();
     }
 }
+
