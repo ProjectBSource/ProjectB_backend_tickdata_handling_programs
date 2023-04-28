@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "HKEX_FUTURE_TickData_Formatting_version_20131014_to_20190329",
+            "request": "launch",
+            "mainClass": "HKEX_FUTURE_TickData_Formatting_version_20131014_to_20190329",
+            "projectName": "ProjectB_backend_tickdata_handling_programs_24f2bb91",
+            "args": ["C:\\Users\\Patrick Fung\\Documents\\TickData\\futuretickdatafiles\\HSI\\HSI_Future_202108_TickData\\201501_01_TR.txt",
+                     "C:\\Users\\Patrick Fung\\Documents\\TickData\\futuretickdatafiles\\HSI\\HSI_Future_202108_TickData\\201501_01_TR_AHT.txt",
+                     "C:\\Users\\Patrick Fung\\Documents\\TickData\\futuretickdatafiles\\HSI\\HSI_Future_202108_TickData\\201501.txt",
+                     "F",
+                     "HSI"
+                    ]
+        },
+        {
+            "type": "java",
+            "name": "HKEX_FUTURE_TickData_Formatting_version_20190401_to_20190916",
+            "request": "launch",
+            "mainClass": "HKEX_FUTURE_TickData_Formatting_version_20190401_to_20190916",
+            "projectName": "ProjectB_backend_tickdata_handling_programs_24f2bb91"
+        },
+        {
+            "type": "java",
+            "name": "HKEX_FUTURE_TickData_Formatting_version_20190916_to_20200327",
+            "request": "launch",
+            "mainClass": "HKEX_FUTURE_TickData_Formatting_version_20190916_to_20200327",
+            "projectName": "ProjectB_backend_tickdata_handling_programs_24f2bb91"
+        },
+        {
+            "type": "java",
+            "name": "HKEX_FUTURE_TickData_Formatting_version_20220330_to_now",
+            "request": "launch",
+            "mainClass": "HKEX_FUTURE_TickData_Formatting_version_20220330_to_now",
+            "projectName": "ProjectB_backend_tickdata_handling_programs_24f2bb91"
+        }
+    ]
+}
