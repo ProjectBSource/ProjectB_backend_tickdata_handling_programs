@@ -54,7 +54,6 @@ public class HKEX_FUTURE_TickData_Formatting_version_20171201_to_20190229 {
         if(aht_or_not==1){
             if(last_line_tr_before_switch!=null){
                 //HSI   F171200000000.00000000 2017120110000000029220.0000000000000001001
-                System.out.println(last_line_tr_before_switch);
                 formated_content.append(reforamtData(last_line_tr_before_switch));
                 formated_content.append("\n");
                 last_line_tr_before_switch = null;
@@ -86,7 +85,6 @@ public class HKEX_FUTURE_TickData_Formatting_version_20171201_to_20190229 {
         else if(aht_or_not==2){
             if(last_line_tr_aht_before_switch!=null){
                 //HHI   F171200000000.00000000 2017120417150000011531.0000000000000004001
-                System.out.println(last_line_tr_aht_before_switch);
                 formated_content.append(reforamtData(last_line_tr_aht_before_switch));
                 formated_content.append("\n");
                 last_line_tr_aht_before_switch = null;
