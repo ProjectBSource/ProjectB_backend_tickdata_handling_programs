@@ -122,7 +122,7 @@ public class HKEX_FUTURE_TickData_Formatting_version_20131014_to_20190329 {
         fw.close();
     }
 
-    public static String reforamtData(String data){
+    private static String reforamtData(String data){
         String newData = null;
         newData = String.format("%s,%s,%s,%s,%s",
             data.substring(29,(29 + 8)).trim(),

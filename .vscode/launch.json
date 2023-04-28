@@ -25,6 +25,19 @@
         },
         {
             "type": "java",
+            "name": "HKEX_FUTURE_TickData_Formatting_version_20171201_to_20190229",
+            "request": "launch",
+            "mainClass": "HKEX_FUTURE_TickData_Formatting_version_20171201_to_20190229",
+            "projectName": "ProjectB_backend_tickdata_handling_programs_24f2bb91",
+            "args": ["C:\\Users\\Patrick Fung\\Documents\\TickData\\futuretickdatafiles\\HSI\\HSI_Future_202108_TickData\\201712_01_TR.txt",
+                     "C:\\Users\\Patrick Fung\\Documents\\TickData\\futuretickdatafiles\\HSI\\HSI_Future_202108_TickData\\201712_01_TR_AHT.txt",
+                     "C:\\Users\\Patrick Fung\\Documents\\TickData\\futuretickdatafiles\\HSI\\HSI_Future_202108_TickData\\201712.txt",
+                     "F",
+                     "HSI"
+                    ]
+        },
+        {
+            "type": "java",
             "name": "HKEX_FUTURE_TickData_Formatting_version_20190401_to_20190916",
             "request": "launch",
             "mainClass": "HKEX_FUTURE_TickData_Formatting_version_20190401_to_20190916",
