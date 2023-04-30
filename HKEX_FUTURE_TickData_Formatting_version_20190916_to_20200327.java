@@ -53,7 +53,8 @@ public class HKEX_FUTURE_TickData_Formatting_version_20190916_to_20200327 {
         StringBuilder formated_content = new StringBuilder();
         if(aht_or_not==1){
             if(last_line_tr_before_switch!=null){
-                formated_content.append(last_line_tr_before_switch);
+                //HSI   F2019123000000000.00000000 2019090309140000025490.0000000000000001020
+                formated_content.append(reforamtData_version2(last_line_tr_before_switch));
                 formated_content.append("\n");
                 last_line_tr_before_switch = null;
             }
@@ -71,7 +72,8 @@ public class HKEX_FUTURE_TickData_Formatting_version_20190916_to_20200327 {
                             readFile(2);
                             break;
                         }
-                        formated_content.append(line_tr);
+                        //HSI   F2019123000000000.00000000 2019090209140000025459.0000000000000001020
+                        formated_content.append(reforamtData_version2(line_tr));
                         formated_content.append("\n");
                     }
                 }
@@ -82,7 +84,8 @@ public class HKEX_FUTURE_TickData_Formatting_version_20190916_to_20200327 {
         }
         else if(aht_or_not==2){
             if(last_line_tr_aht_before_switch!=null){
-                formated_content.append(last_line_tr_aht_before_switch);
+                //HHI   F2019092700000000.00000000 2019090317150000010042.0000000000000001001
+                formated_content.append(reforamtData_version2(last_line_tr_aht_before_switch));
                 formated_content.append("\n");
                 last_line_tr_aht_before_switch = null;
             }
@@ -104,7 +107,8 @@ public class HKEX_FUTURE_TickData_Formatting_version_20190916_to_20200327 {
                             readFile(1);
                             break;
                         }
-                        formated_content.append(line_tr_aht);
+                        //HSI   F2019092700000000.00000000 2019090217150000025495.0000000000000001001
+                        formated_content.append(reforamtData_version2(line_tr_aht));
                         formated_content.append("\n");
                     }
                 }
@@ -121,5 +125,17 @@ public class HKEX_FUTURE_TickData_Formatting_version_20190916_to_20200327 {
         bw.write(content.toString());
         bw.close();
         fw.close();
+    }
+
+    private static String reforamtData_version2(String data){
+        String newData = null;
+        newData = String.format("%s,%s,%s,%s,%s",
+            data.substring(33,(33 + 8)).trim(),
+            data.substring(41,(41 + 6)).trim(),
+            data.substring(50,(50 + 5)).trim(),
+            data.substring(69,(69 + 3)).trim(),
+            (data.substring(7,(7 + 4)).trim())
+        );
+        return newData;
     }
 }
